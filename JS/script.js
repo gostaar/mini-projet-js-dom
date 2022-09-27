@@ -1,3 +1,14 @@
+function calculSalaire() {
+  var SB=document.getElementById('txtSalaireBrute').value;
+  
+  var NBE=document.getElementById('txtNbreEnfant').value;
+  var NPC=document.getElementById('txtNbrePersonneCharge').value;
+  var S=document.getElementById('cmbsex')[document.getElementById('cmbsex').value];
+  
+  salaireBrut=Number(SB);
+  var impo=18;
+}
+
 function CREFORM() {
   var Tableau=document.createElement('Table');
   Tableau.setAttribute('id', 'tableSalire'); //affecter un attribut
@@ -126,5 +137,27 @@ function CREFORM() {
   document.body.appendChild(Tableau);
 }
   
-  
+function ViderForm()
+{
+   //Créer une liste d'objets contenus dans le body
+  let ListobjetHTML=document.querySelectorAll('body *');
+  for (let obj of ListobjetHTML)
+  {
+    if (obj.type=='text')
+    {
+      obj.value='';
+    }
+    if obj.tagName=='SELECT')
+    {
+      obj.selectedIndex=0;
+    }
+    if (obj.type=='radio')
+    {
+      obj.checked=false;
+    }
+    if(obj.Type=='checkbox')
+    {
+      obj.checked=false;
+    }
+  }
 }
