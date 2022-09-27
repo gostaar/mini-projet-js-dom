@@ -88,6 +88,43 @@ function CREFORM() {
   //------
   TDlbtn.appendChild(btn);
   TR.appendChild(TDlbtn);
+  Tableau.appendChild(TR);
+  //------
+  var TDlbtn=document.createElement('TD');
+  var btn=document.createElement('Button');
+  btn.innerHTML=('Calculer');
+  btn.setAttribute('id','btnCalculer');
+  // Création de l'évènement Click
+  btn.onclick=calculSalaire;
+  //------
+  TDlbtn.appendChild(btn);
+  TR.appendChild(TDlbtn);
+  Tableau.appendChild(TR);
+  //------
+  var TDlbtn=document.createElement('label');
+  var TDlbl=document.createElement('TD');
+  var TDtxt=document.createElement('TD');
+  
+  var lbl=document.createElement('label');
+  lbl.innerHTML=('Salaire Net');
+  lbl.style.fontSize = '20px';
+  lbl.style.color= 'red'
+  //------
+  var lblNet=document.createElement('label');
+  lblNET.setAttribute('id', 'lblSalaireNet');
+  lblNET.style.fontSize='20px';
+  lblNET.style.color='red';
+  lblNET.style.border='dashed';
+  //------
+  TDlbl.appendChild(lbl);
+  
+  TR.appendChild(TDlbl);
+  
+  TDtxt.appendChild(lblNET);
+  TR.appendChild(TDtxt);
+  //------
+  document.body.appendChild(Tableau);
+}
   
   
 }
