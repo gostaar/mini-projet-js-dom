@@ -7,6 +7,41 @@ function calculSalaire() {
   
   salaireBrut=Number(SB);
   var impo=18;
+  
+  if (Number(NBE)==0)
+  {
+  salaireBrut+=100;
+  }
+  else
+  {
+    if (Number(NBE)<=3)
+    {
+      salaireBrut+=Number(NBE)*300;
+    }
+    else
+    {
+      salaireBrut+=900;
+    }
+  }
+  
+  if(S=='F')
+  {
+    impo-=2;
+  }
+  
+  if(NPC==3)
+  {
+    impo-=1;
+  }
+  else
+  {
+    if(Number(NPC)>=4)
+    {
+      impo-=2;
+    }
+  }
+  SalaireNET=salaireBrut - (salaireBrut-impo)/100 - salaireBrut*7/100 - salaireBrut*5/100;
+  document.getElementById('lblSalaireNet').innerHTML=salaireNET;
 }
 
 function CREFORM() {
