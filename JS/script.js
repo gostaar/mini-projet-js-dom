@@ -42,7 +42,7 @@ function calculSalaire()
       }
     }
     SalaireNET=salaireBrut - (salaireBrut-impo)/100 - salaireBrut*7/100 - salaireBrut*5/100;
-    document.getElementById('lblSalaireNet').innerHTML=salaireNET;
+    document.getElementById('lblSalaireNet').innerHTML=SalaireNET;
 }
   
   function CREFORM() 
@@ -90,6 +90,28 @@ function calculSalaire()
     TR.appendChild(TDtxt);
     
     Tableau.appendChild(TR);
+    //------
+    var TR=document.createElement('TR'); //créer une balise TR
+    var TDlbl=document.createElement('TD'); //créer une balise TD
+    var TDtxt=document.createElement('TD'); //Créer une balise TD
+    // Création du label
+    var lbl=document.createElement('label'); //créer une balise label
+    lbl.innerHTML=('Nombre de Personne à Charge'); // Affecte le texte du label
+    //Création de la one de saisie
+    var txt=document.createElement('input'); //Créer une balise input
+    txt.type="text"; //équivalent de input type = text
+    txt.setAttribute('id', 'txtNbrePersonneCharge'); //affecter une attribut
+    
+    //intégration d'un label dans le TD
+    TDlbl.appendChild(lbl); 
+    //intégration du TD dans le TR
+    TR.appendChild(TDlbl);
+    //intégration du input dans le TD
+    TDtxt.appendChild(txt);
+    //intégration du TD dans le TR
+    TR.appendChild(TDtxt);
+    //intérgration du TR dans le tableau
+    Tableau.appendChild(TR);
     //-------
     var TR=document.createElement('TR');
     var TDlbl=document.createElement('TD');
@@ -100,7 +122,7 @@ function calculSalaire()
     //Création de la liste déroulante
     var cmbsex=document.createElement('select');
     cmbsex.type="select";
-    cmdsex.setAttribute('id', 'cmbsex');
+    cmbsex.setAttribute('id', 'cmbsex');
     //Création d'une liste déroulante
     var ligne=document.createElement('option');
     ligne.value='-';
@@ -110,19 +132,19 @@ function calculSalaire()
     //------
     var ligne=document.createElement('option');
     ligne.value='F';
-    ligne.texte='F';
+    ligne.text='F';
     cmbsex.add(ligne);
     //------
     var ligne=document.createElement('option');
     ligne.value='M';
-    ligne.texte='M';
+    ligne.text='M';
     cmbsex.add(ligne);
     //------
     TDlbl.appendChild(lbl);
     TR.appendChild(TDlbl);
     //------
     TDtxt.appendChild(cmbsex);
-    TR.appenChild(TDtxt);
+    TR.appendChild(TDtxt);
     Tableau.appendChild(TR);
     //------
     var TR=document.createElement('TR');
@@ -159,7 +181,7 @@ function calculSalaire()
     lbl.style.fontSize = '20px';
     lbl.style.color= 'red'
     //------
-    var lblNet=document.createElement('label');
+    var lblNET=document.createElement('label');
     lblNET.setAttribute('id', 'lblSalaireNet');
     lblNET.style.fontSize='20px';
     lblNET.style.color='red';
